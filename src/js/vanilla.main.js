@@ -150,11 +150,27 @@
 			}
 
 			this.linksScroll();
+
+			if(exists(this.navigation)) {
+				this.navigationScroll();
+			}
 			
 			
 			// this.buttons.forEach( (button) => {
 			// 	button.addEventListener('click', (e) => this._showButtonClick(e, this));
 			// });
+		}
+
+		checkScrollY() {
+			window.scrollY > 0 ? addClass(this.navigation, 'nav_scrolled') : removeClass(this.navigation, 'nav_scrolled');
+		}
+
+		navigationScroll(){
+
+			this.checkScrollY();
+
+			window.addEventListener("scroll", ()	=> this.checkScrollY() );
+
 		}
 
 		hamburgerClick(el) {

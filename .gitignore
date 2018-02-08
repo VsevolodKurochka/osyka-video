@@ -57,4 +57,10 @@ typings/
 # dotenv environment variables file
 .env
 
+build
+
+build/*
+
 build/
+build/index.html
+build/css/style.css

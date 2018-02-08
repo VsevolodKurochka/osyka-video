@@ -24,9 +24,17 @@
   </head>
   <body>
     <div class="fixed fixed_md-top">
-      <div class="nav nav_style">
+      <div class="nav nav_style" id="navigation">
         <div class="nav__container container">
           <div class="nav__row row">
+            <div class="nav__logo col-8 col-md-3">
+              <button class="hamburger hamburger_effect-2" type="button" id="js-nav-hamburger"><span class="hamburger__lines"><span></span><span></span><span></span><span></span></span>
+              </button>
+              <div class="nav__logo-content">
+                <p class="nav__logo-content-text">Oleksii Osyka
+                </p>
+              </div>
+            </div>
             <nav class="nav__menu col-12 col-md-10" id="navigation">
               <li><a href="#">Reel</a></li>
               <li><a href="#">Music Videos</a></li>
@@ -35,7 +43,11 @@
               <li><a href="#">Bio</a></li>
               <li><a href="#">Contacts</a></li>
             </nav>
-            <div class="nav__addition col-4 col-md-3" id="js-nav-addition">
+            <div class="nav__addition col- col-md-2" id="js-nav-addition">
+              <ul class="social social_white">
+                <li class="social__item"><a class="social__item-link" href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

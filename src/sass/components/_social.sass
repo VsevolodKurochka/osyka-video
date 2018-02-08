@@ -1,0 +1,22 @@
++b('social')
+	list-style: none
+
+	+e('item')
+		display: inline-block
+		vertical-align: middle
+		&:not(:last-child)
+			margin-right: 15px
+
+		+ee('link')
+			display: block
+			font-size: 30px
+			+transition
+
+	+m('white')
+
+		+b('social')
+			+e('item')
+				+ee('link')
+					color: $color-white
+					&:hover
+						color: $color-brand-1

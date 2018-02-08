@@ -188,12 +188,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 			this.linksScroll();
 
+			if (exists(this.navigation)) {
+				this.navigationScroll();
+			}
+
 			// this.buttons.forEach( (button) => {
 			// 	button.addEventListener('click', (e) => this._showButtonClick(e, this));
 			// });
 		}
 
 		_createClass(Navigation, [{
+			key: 'checkScrollY',
+			value: function checkScrollY() {
+				window.scrollY > 0 ? addClass(this.navigation, 'nav_scrolled') : removeClass(this.navigation, 'nav_scrolled');
+			}
+		}, {
+			key: 'navigationScroll',
+			value: function navigationScroll() {
+				var _this4 = this;
+
+				this.checkScrollY();
+
+				window.addEventListener("scroll", function () {
+					return _this4.checkScrollY();
+				});
+			}
+		}, {
 			key: 'hamburgerClick',
 			value: function hamburgerClick(el) {
 				toggleClass(this.hamburger, 'active');
@@ -207,12 +227,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		}, {
 			key: 'linksScroll',
 			value: function linksScroll() {
-				var _this4 = this;
+				var _this5 = this;
 
 				new SmoothScroll(this.links, {
 					after: function after() {
-						removeClass(_this4.hamburger, 'active');
-						removeClass(_this4.navigation, 'nav__menu_active');
+						removeClass(_this5.hamburger, 'active');
+						removeClass(_this5.navigation, 'nav__menu_active');
 					}
 				});
 			}

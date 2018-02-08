@@ -48,3 +48,9 @@ mixin hamburger(type)
 				span
 				span
 				span
+
+mixin social(mod)
+	+b.UL.social(class=mod)
+		+e.LI.item
+			+e.A.item-link(href="#")
+				i.fab.fa-facebook-f
