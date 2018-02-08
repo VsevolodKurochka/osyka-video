@@ -55,7 +55,7 @@
 		+ee('link')
 			+absolute(0,null,null,0)
 			+size(100%)
-			z-index: 2
+			z-index: 4
 
 		+ee('content')
 			width: 100%
@@ -74,18 +74,58 @@
 
 			+ee('title')
 				+relative
-				padding-bottom: 10px
-				margin-bottom: 10px
-				
+				padding-bottom: 15px
+				margin-bottom: 15px
+
 				font-weight: 300
 				line-height: 1.1
 				font-size: 20px
+
+				&:before
+					content: ''
+					+absolute(null, null, 0, 50%)
+					margin-left: -45px
+					+size(90px, 2px)
+					background-color: $color-white
 
 				+min(sm)
 					font-size: 30px
 
 				+min(md)
 					font-size: 36px
+
+			+ee('link')
+				text-align: center
+				opacity: 0.6
+				color: $color-white
+
+				+ee('icon')
+					+relative
+					display: inline-block
+					vertical-align: middle
+					margin-right: 15px
+					+size(25px)
+					border-radius: 100%
+					border: 1px solid $color-white
+					&:before,
+					&:after
+						content: ''
+						+absolute(50%, null, null, 50%)
+						background-color: $color-white
+						transform: translate(-50%, -50%)
+
+					&:before
+						+size(11px, 1px)
+
+					&:after
+						+size(1px, 11px)
+
+				+ee('text')
+					display: inline-block
+					vertical-align: middle
+					text-transform: uppercase
+					font-size: 12px
+					font-weight: 400
 
 		&:hover &
 			+ee('content')
