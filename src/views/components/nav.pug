@@ -6,8 +6,8 @@
 					+hamburger('2')
 					+e.logo-content
 						+e.logo-content-img(src="img/logo.png" alt="")
-				+e.NAV.menu.col-12.col-md-6#navigation
+				+e.NAV.menu.col-12.col-md-10#navigation
 					for item in navigation
-						+e.LI.menu-item
-							+e.A.menu-item-link(data-scroll href=item.link)=item.name
+						li
+							a(href=item.link)=item.name
 				+e.addition.col-4.col-md-3#js-nav-addition

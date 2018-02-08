@@ -1518,43 +1518,45 @@ input[type="checkbox"]:checked + .control__indicator:before {
   }
 }
 
-.nav__menu-item {
+.nav__menu li {
   display: block;
   -webkit-transition: all .5s ease;
   -o-transition: all .5s ease;
   transition: all .5s ease;
 }
 
-.nav__menu-item a {
+.nav__menu li a {
   position: relative;
   display: block;
+  font-weight: bold;
   color: inherit;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 @media (max-width: 1024px) {
-  .nav__menu-item {
+  .nav__menu li {
     margin-bottom: 10px;
   }
-  .nav__menu-item a {
+  .nav__menu li a {
     padding: 10px 15px;
     color: #fff;
   }
 }
 
 @media (min-width: 1025px) {
-  .nav__menu-item {
+  .nav__menu li {
     display: inline-block;
     vertical-align: middle;
   }
-  .nav__menu-item:not(:last-child) {
+  .nav__menu li:not(:last-child) {
     margin-right: 15px;
   }
-  .nav__menu-item a {
+  .nav__menu li a {
     padding-top: 7.5px;
     padding-bottom: 7.5px;
   }
-  .nav__menu-item a:before, .nav__menu-item a:after {
+  .nav__menu li a:before, .nav__menu li a:after {
     position: absolute;
     bottom: -2px;
     width: 0%;
@@ -1562,22 +1564,22 @@ input[type="checkbox"]:checked + .control__indicator:before {
     content: "";
     background-color: #28a5f5;
   }
-  .nav__menu-item a:before {
+  .nav__menu li a:before {
     left: 0;
   }
-  .nav__menu-item a:after {
+  .nav__menu li a:after {
     right: 0;
     -webkit-transition: width .8s cubic-bezier(.22, .61, .36, 1);
     -o-transition: width .8s cubic-bezier(.22, .61, .36, 1);
     transition: width .8s cubic-bezier(.22, .61, .36, 1);
   }
-  .nav__menu-item a:hover:before {
+  .nav__menu li a:hover:before {
     width: 100%;
     -webkit-transition: width .5s cubic-bezier(.22, .61, .36, 1);
     -o-transition: width .5s cubic-bezier(.22, .61, .36, 1);
     transition: width .5s cubic-bezier(.22, .61, .36, 1);
   }
-  .nav__menu-item a:hover:after {
+  .nav__menu li a:hover:after {
     width: 100%;
     background-color: transparent;
     -webkit-transition: 0s;
