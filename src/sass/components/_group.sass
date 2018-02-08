@@ -2,6 +2,7 @@ $group-title: ('default': 30px, 'xs': 35px, 'sm': 40px, 'md': 50px, 'lg': 60px)
 
 +b('group')
 	+e('title')
+		+relative
 		text-transform: uppercase
 		line-height: 1.1
 		font-weight: 100
@@ -10,3 +11,25 @@ $group-title: ('default': 30px, 'xs': 35px, 'sm': 40px, 'md': 50px, 'lg': 60px)
 		span
 			color: $color-brand-2
 			font-weight: bold
+
+	+m('inline')
+		
+		+b('group')
+			+e('title')
+				&:before
+					content: ''
+					+absolute(0, 0, null, null)
+					+size(100%, 2px)
+					background-color: $color-brand-2
+					opacity: 0.2
+
+				+min(sm)
+					padding-right: 45px
+					margin-right: 45px
+					&:before
+						+size(2px, 100%)
+						transform: rotate(15deg)
+
+		+min(sm)
+			display: flex
+			align-items: center
