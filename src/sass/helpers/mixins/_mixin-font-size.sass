@@ -13,3 +13,22 @@
 			$fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint)
 			@media (min-width: $fs-breakpoint)
 				font-size: $fs-font-size
+
+/// Get font-size from map
+/// @access public
+/// @param {String} $fs-map - font-size
+/// @param {Map} $fs-breakpoints [$breakpoints] - font-size connected on breakpoints
+/// @author Vsevolod Kurochka
+=fs-simple($fs-map, $fs-breakpoints: $breakpoints)
+
+	@each $fs-breakpoint, $fs-font-size in $fs-map
+
+		@if $fs-breakpoint == 'default'
+			font-size: $fs-font-size
+
+		@else
+			$fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint)
+
+			@media (min-width: $fs-breakpoint)
+				
+				font-size: $fs-font-size

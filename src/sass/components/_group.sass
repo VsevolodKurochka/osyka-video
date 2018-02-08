@@ -1,0 +1,12 @@
+$group-title: ('default': 30px, 'xs': 35px, 'sm': 40px, 'md': 50px, 'lg': 60px)
+
++b('group')
+	+e('title')
+		text-transform: uppercase
+		line-height: 1.1
+		font-weight: 100
+		+fs-simple($group-title)
+
+		span
+			color: $color-brand-2
+			font-weight: bold
