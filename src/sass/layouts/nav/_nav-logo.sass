@@ -1,11 +1,21 @@
 +b($themeNav)
 	&__logo
+		display: none
 		font-size: 0
 
 		&-content
 			display: inline-block
-
+			vertical-align: middle
+			&-text
+				text-transform: uppercase
+				font-size: 18px
+				color: $color-white
+				font-weight: 100
+				span
+					font-weight: bold
+					
 		+max(md)
+			display: block
 			img
 				vertical-align: middle
 				max-height: 28px
