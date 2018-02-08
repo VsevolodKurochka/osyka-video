@@ -942,19 +942,23 @@ a, button {
   background-color: #00040b;
 }
 
-.btn_border-brand-1 {
+.btn_border-white {
   border-style: solid;
   border-width: 3px;
 }
 
-.btn_border-brand-1 {
-  color: #001e57;
+.btn_border-white {
+  color: #fff;
   background-color: transparent;
-  border-color: #001e57;
+  border-color: #fff;
 }
 
-.btn_border-brand-1:before {
-  background-color: #001e57;
+.btn_border-white:before {
+  background-color: #fff;
+}
+
+.btn_border-white:hover {
+  color: #001e57;
 }
 
 .effect:before {
@@ -1476,6 +1480,10 @@ input[type="checkbox"]:checked + .control__indicator:before {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 @media (max-width: 1024px) {
@@ -1516,6 +1524,9 @@ input[type="checkbox"]:checked + .control__indicator:before {
 @media (min-width: 1025px) {
   .nav {
     padding: 25px 0;
+  }
+  .nav_scrolled {
+    padding: 15px 0;
   }
 }
 
@@ -1584,6 +1595,7 @@ input[type="checkbox"]:checked + .control__indicator:before {
   .nav__menu li a {
     padding-top: 7.5px;
     padding-bottom: 7.5px;
+    color: #fff;
   }
   .nav__menu li a:before, .nav__menu li a:after {
     position: absolute;
@@ -1857,7 +1869,79 @@ input[type="checkbox"]:checked + .control__indicator:before {
 
 .header {
   position: relative;
-  z-index: 1;
+  color: #fff;
+}
+
+.header_background:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: rgba(0, 30, 87, .8);
+}
+
+.header_full {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+
+  -webkit-box-align: center;
+
+  -webkit-align-items: center;
+
+  -ms-flex-align: center;
+
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.header__title {
+  margin-bottom: 15px;
+  font-weight: 300;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.header__title span {
+  font-weight: bold;
+}
+
+@media (min-width: 1200px) {
+  .header__title {
+    font-size: 72px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header__title_big {
+    font-size: 100px;
+  }
+}
+
+.header__subtitle {
+  margin-bottom: 30px;
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .header__subtitle {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .header__subtitle {
+    font-size: 24px;
+  }
 }
 
 .footer {

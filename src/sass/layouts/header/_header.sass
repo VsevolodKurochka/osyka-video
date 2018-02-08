@@ -1,5 +1,45 @@
 +b("header")
-  position: relative
-  z-index: z("default")
+	position: relative
+	color: $color-white
 
-  //@include bg('');
+	+m('background')
+		&:before
+			content: ''
+			+absolute(0, null, null, 0)
+			+size(100%)
+			background-color: transparentize($color-brand-1, 0.2)
+
+	+m('full')
+		display: flex
+		height: 100vh
+		align-items: center
+		justify-content: center
+
+	+e('title')
+		margin-bottom: 15px
+		line-height: 1
+		text-transform: uppercase
+		font-weight: 300
+		span
+			font-weight: bold
+
+		+min(lg)
+			font-size: 72px
+
+		+m('big')
+
+			+min(lg)
+
+				font-size: 100px
+
+	+e('subtitle')
+		line-height: 1
+		font-weight: 300
+		margin-bottom: 30px
+		font-size: 19px
+
+		+min(sm)
+			font-size: 20px
+
+		+min(md)
+			font-size: 24px

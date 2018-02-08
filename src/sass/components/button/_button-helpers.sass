@@ -20,7 +20,7 @@ $btn-static: ("white": ($color-white, $color-brand-1), "brand-1": ($color-brand-
 
 // 1 key - border-color
 // 2 key - text color
-$btn-border: ("brand-1": ($color-brand-1, $color-brand-1))
+$btn-border: ("white": ($color-white, $color-white, $color-brand-1))
 
 =btn-size($btn-padding, $btn-font-size)
   padding: $btn-padding
@@ -63,6 +63,7 @@ $btn-border: ("brand-1": ($color-brand-1, $color-brand-1))
   @each $name, $values in $btn-border
     $btn-border-color: nth($values, 1)
     $btn-color: nth($values, 2)
+    $btn-hover-color: nth($values, 3)
 
     &_border-#{$name}
       @extend %vbtn-border
@@ -70,3 +71,6 @@ $btn-border: ("brand-1": ($color-brand-1, $color-brand-1))
       background-color: transparent
 
       +btn-border($btn-border-color, $btn-color)
+
+      &:hover
+        color: $btn-hover-color
