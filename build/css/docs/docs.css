@@ -3,7 +3,7 @@
   padding-bottom: 90px;
   margin-bottom: 45px;
   color: #fff;
-  background-color: #28a5f5;
+  background-color: #001e57;
 }
 
 .docs__intro-title {
@@ -38,7 +38,7 @@
   margin-bottom: 30px;
   font-size: 25px;
   font-weight: bold;
-  color: #28a5f5;
+  color: #001e57;
 }
 
 .docs__sidebar-list {
@@ -61,5 +61,5 @@
 }
 
 .docs__sidebar-list-item-link:hover {
-  color: #28a5f5;
+  color: #001e57;
 }
