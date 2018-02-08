@@ -1475,6 +1475,12 @@ input[type="checkbox"]:checked + .control__indicator:before {
   }
 }
 
+.nav {
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
 .nav__row {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -1524,6 +1530,7 @@ input[type="checkbox"]:checked + .control__indicator:before {
 @media (min-width: 1025px) {
   .nav {
     padding: 25px 0;
+    background-color: rgba(31, 31, 31, .7);
   }
   .nav_scrolled {
     padding: 15px 0;
