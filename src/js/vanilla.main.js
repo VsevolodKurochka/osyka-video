@@ -136,7 +136,10 @@
 	class Navigation {
 		constructor(){
 			this.prefix = '';
-			this.navigation = document.getElementById('navigation');
+			this.navigation = document.getElementById('js-navigation');
+
+			this.menu = document.getElementById('js-navigation-menu');
+
 			this.hamburger = document.getElementById('js-nav-hamburger');
 			this.addition = document.getElementById('js-nav-addition');
 			this.links = '.nav__menu-item-link';
@@ -175,7 +178,7 @@
 
 		hamburgerClick(el) {
 			toggleClass(this.hamburger, 'active');
-			toggleClass(this.navigation, `nav__menu_active`);
+			toggleClass(this.menu, `nav__menu_active`);
 		}
 
 		additionClick(el) {

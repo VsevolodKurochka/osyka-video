@@ -1,6 +1,7 @@
 $group-title: ('default': 30px, 'xs': 35px, 'sm': 40px, 'md': 50px, 'lg': 60px)
 
 +b('group')
+	margin-bottom: 30px
 	+e('title')
 		+relative
 		text-transform: uppercase
@@ -33,3 +34,7 @@ $group-title: ('default': 30px, 'xs': 35px, 'sm': 40px, 'md': 50px, 'lg': 60px)
 		+min(sm)
 			display: flex
 			align-items: center
+
+			+b('group')
+				+e('description')
+					padding-right: 5%

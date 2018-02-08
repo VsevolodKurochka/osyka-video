@@ -1,14 +1,14 @@
 +b.fixed._md-top
-	+b.nav._style#navigation
+	+b.nav._style#js-navigation
 		+e.container.container
 			+e.row.row
 				+e.logo.col-8.col-md-3
 					+hamburger('2')
 					+e.logo-content
 						+e.P.logo-content-text Oleksii Osyka
-				+e.NAV.menu.col-12.col-md-10#navigation
+				+e.NAV.menu.col-12.col-md-10#js-navigation-menu
 					for item in navigation
 						li
 							a(href=item.link)=item.name
-				+e.addition.col-.col-md-2#js-nav-addition
+				+e.addition.col-4.col-md-2#js-nav-addition
 					+social('_nav')
