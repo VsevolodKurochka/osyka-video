@@ -1,0 +1,27 @@
+////
+/// @author Vsevolod Kurochka
+/// @group Offset
+////
+
+/// Margin
+/// @param {Length} $top - Top margin
+/// @param {Length} $right - Right margin
+/// @param {Length} $bottom - Bottom margin
+/// @param {Length} $left - Left margin
+=margin($top, $right, $bottom, $left)
+	margin-top: $top
+	margin-right: $right
+	margin-bottom: $bottom
+	margin-left: $left
+
+/// Margin Horizontal
+/// @param {Length} $right [null] - Right margin
+/// @param {Length} $left [$right] - Left margin
+=margin-x($right, $left: $right)
+	+margin(null, $right, null, $left)
+
+/// Margin Vertical
+/// @param {Length} $top [null] - Top margin
+/// @param {Length} $bottom [$top] - Bottom margin
+=margin-y($top, $bottom: $top)
+	+margin($top, null, $bottom, null)

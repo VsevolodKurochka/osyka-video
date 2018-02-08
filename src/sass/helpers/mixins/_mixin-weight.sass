@@ -1,0 +1,11 @@
+/// Get value from font map
+/// @access public
+/// @param {String} $font - Component Value
+/// @param {String} $map - Map
+/// @return {String}
+/// @author Vsevolod Kurochka
+=weight($font, $weights: $weights)
+	@if map-has-key($weights, $font)
+		font-weight: map-get($weights, $font)
+	@else
+		@error "No layer with name " $font " in $weights. The layer must be one of the " map-keys($weights) " ."

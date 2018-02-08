@@ -1,0 +1,33 @@
++b($themeNav)
+  +e("menu")
+    +ee("item")
+      display: block
+
+      +transition
+
+      a
+        display: block
+        position: relative
+        color: inherit
+        text-decoration: none
+
+      +max(md)
+        margin-bottom: 10px
+
+        a
+          padding: 10px 15px
+          color: $color-white
+
+
+      +min(md)
+        display: inline-block
+        vertical-align: middle
+
+        &:not(:last-child)
+          margin-right: 15px
+
+        a
+          padding-top: 7.5px
+          padding-bottom: 7.5px
+
+          +linkEffect3

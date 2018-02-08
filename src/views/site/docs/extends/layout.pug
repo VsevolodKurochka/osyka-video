@@ -1,0 +1,50 @@
+block variables
+
+//- Include helpers mixins
+include /bem/index
+include /includes/config
+include /site/docs/mixins/mixins
+//- End
+
+doctype html
+html(lang="ru")
+	head
+		include /site/docs/includes/head
+		include /site/docs/includes/styles
+		block css
+			//+css("//fonts.googleapis.com/css?family=Roboto:300,400,700,900&amp;subset=cyrillic")
+			//+css("../css/style.css")
+			//+css('../css/docs/docs.css')
+			//+css('../css/docs/prism.css')
+		block js
+			//+js("../js/vanilla.main.js")
+			//+js("../js/docs/prism.min.js")
+		
+	body
+		block nav
+		.site#page
+			block header
+			.site-content#content
+				+b.SECTION.docs
+					+e.intro
+						.v-container
+							block intro
+					block special
+					.v-container
+						.v-row
+							+e.content.col-12.col-sm-8
+								block content
+							+e.sidebar.col-12.col-sm-4
+								+e.P.sidebar-title Available elements
+								+e.UL.sidebar-list
+									+e.LI.sidebar-list-item
+										+e.A.sidebar-list-item-link(href="/docs/components/button.html") Buttons
+									+e.LI.sidebar-list-item
+										+e.A.sidebar-list-item-link(href="/docs/components/modal.html") Modal
+									+e.LI.sidebar-list-item
+										+e.A.sidebar-list-item-link(href="/docs/components/title.html") Title
+									+e.LI.sidebar-list-item
+										+e.A.sidebar-list-item-link(href="/docs/components/form.html") Form
+									+e.LI.sidebar-list-item
+										+e.A.sidebar-list-item-link(href="/docs/components/collapse.html") Collapse
+			block footer

@@ -1,0 +1,13 @@
++b.fixed._md-top
+	+b.nav._style
+		+e.container.container
+			+e.row.row
+				//- +e.logo.col-8.col-md-3
+					+hamburger('2')
+					+e.logo-content
+						+e.logo-content-img(src="img/logo.png" alt="")
+				+e.NAV.menu.col-12.col-md-6#navigation
+					for item in navigation
+						+e.LI.menu-item
+							+e.A.menu-item-link(data-scroll href=item.link)=item.name
+				+e.addition.col-4.col-md-3#js-nav-addition

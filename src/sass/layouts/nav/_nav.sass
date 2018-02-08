@@ -1,0 +1,29 @@
++b($themeNav)
+	+e("row")
+		justify-content: space-between
+
+
+	+max(md)
+		&_style
+			position: fixed
+			display: flex
+			align-items: center
+			width: 100%
+			height: 56px
+			left: 0
+			top: 0
+			padding: 11px 0
+			background-color: $color-responsive-menu
+			box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)
+			z-index: z("fixed")
+
+			+ .site
+				margin-top: 56px
+
+		&_style &
+			&__container
+				flex-basis: 100%
+
+
+	+min(md)
+		padding: 25px 0

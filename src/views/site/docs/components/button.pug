@@ -1,0 +1,38 @@
+extends /site/docs/extends/layout
+block variables
+	- var title = 'Unit Test - Button'
+block intro
+	+docs-intro('Buttons', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ipsa repellat quia totam ab doloribus!')
+block content
+	+e.group
+		+docs-group-title('Button "Sizes":')
+		+b.btn-group
+			+b.BUTTON.btn Default button
+			+b.BUTTON.btn._size-lg Large button
+		+docs-code('pug')
+			|+b.BUTTON.btn Default button
+			|+b.BUTTON.btn._size-lg Large button
+		+b.btn-group
+			+b.BUTTON.btn._size-fluid Fluid Default button
+			+b.BUTTON.btn._size-fluid._size-lg Fluid Large button
+		+docs-code('pug')
+			|+b.BUTTON.btn._size-fluid Fluid Default button
+			|+b.BUTTON.btn._size-fluid._size-lg Fluid Large button
+	+e.group
+		+docs-group-title('Button "Colors":')
+		+b.btn-group
+			+b.BUTTON.btn._white White button
+			+b.BUTTON.btn._brand-1 Brand-1 button
+	+e.group
+		+docs-group-title('Button "Border":')
+		+b.BUTTON.btn._border-brand-1 Button border-brand-1
+	+e.group
+		+docs-group-title('Button "Hover effect":')
+		+b.btn-group
+			+b.BUTTON.btn._brand-1._brand-1-simple Button "Simple"
+			+b.BUTTON.btn._brand-1.veffect._line.left.top Button "Line"
+			+b.BUTTON.btn._brand-1.veffect._skew Button "Skew"
+			+b.BUTTON.btn._brand-1.veffect._shutter-y-out Button "Shutter Y out"
+			+b.BUTTON.btn._brand-1.veffect._shutter-x-out Button "Shutter X out"
+			+b.BUTTON.btn._brand-1.veffect._bounce-top Button "Bounce Top"
+			+b.BUTTON.btn._brand-1.veffect._bounce-bottom Button "Bounce Bottom"

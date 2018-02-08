@@ -1,0 +1,65 @@
+.docs__intro {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  margin-bottom: 45px;
+  color: #fff;
+  background-color: #28a5f5;
+}
+
+.docs__intro-title {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.docs__intro-description {
+  font-size: 20px;
+}
+
+.docs__section {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.docs__group {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.docs__group:not(:last-child) {
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.docs__group:not(:first-child) {
+  margin-top: 30px;
+}
+
+.docs__group-title {
+  position: relative;
+  margin-bottom: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #28a5f5;
+}
+
+.docs__sidebar-list {
+  padding: 15px;
+  list-style: none;
+}
+
+.docs__sidebar-list-item {
+  display: block;
+}
+
+.docs__sidebar-list-item-link {
+  display: block;
+  padding: 5px 0;
+  color: #999;
+  text-decoration: none;
+  -webkit-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+}
+
+.docs__sidebar-list-item-link:hover {
+  color: #28a5f5;
+}

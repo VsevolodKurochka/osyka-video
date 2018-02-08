@@ -1,0 +1,59 @@
+@import "../helpers/variables/*"
+@import "../helpers/maps/*"
+@import "../helpers/mixins/BEM/*"
+@import "../helpers/mixins/*"
+@import "../helpers/functions/*"
+
++b('docs')
+	&__intro
+		padding-top: 90px
+		padding-bottom: 90px
+		margin-bottom: 45px
+		background-color: $color-brand-1
+		color: #fff
+
+		&-title
+			font-size: 50px
+			font-weight: bold
+
+		&-description
+			font-size: 20px
+
+	&__section
+		margin-bottom: 30px
+		padding-bottom: 30px
+
+	&__group
+		margin-bottom: 30px
+		padding-bottom: 30px
+
+		&:not(:last-child)
+			border-bottom: 1px solid #e4e4e4
+
+		&:not(:first-child)
+			margin-top: 30px
+
+		&-title
+			position: relative
+			margin-bottom: 30px
+			font-size: 25px
+			color: $color-brand-1
+			font-weight: bold
+
+	&__sidebar
+		&-list
+			padding: 15px
+			list-style: none
+
+			&-item
+				display: block
+
+				&-link
+					display: block
+					text-decoration: none
+					color: #999
+					padding: 5px 0
+					transition: all ease 0.5s
+
+					&:hover
+						color: $color-brand-1

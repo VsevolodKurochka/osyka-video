@@ -1,0 +1,17 @@
+mixin css(src)
+	link(href=src rel="stylesheet")
+
+mixin js(src)
+	script(src=src)
+
+mixin docs-intro(title, description)
+	+e.intro-title=title
+	+e.intro-description=description
+
+mixin docs-group-title(title)
+	+e.group-title=title
+
+mixin docs-code(language)
+	pre
+		code(class='language-' + language)
+			block

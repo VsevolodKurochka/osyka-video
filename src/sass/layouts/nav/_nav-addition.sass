@@ -1,0 +1,83 @@
++b($themeNav)
+	$self: &
+
+	+e("addition")
+		position: relative
+		display: inline-block
+		color: $color-black
+		font-weight: bold
+
+		+ee("link")
+			display: block
+			color: inherit
+			text-decoration: none
+
+
+		+ee("toggle")
+			-webkit-tap-highlight-color: transparent
+			outline: none
+			display: block
+			cursor: pointer
+
+			span
+				position: relative
+				display: inline-block
+				vertical-align: middle
+				width: 5px
+				height: 5px
+				margin-right: 5px
+				border-radius: 100%
+				background-color: #fff
+
+				&:last-child
+					margin-right: 0
+
+
+		+max(md)
+			text-align: right
+
+			&:after
+				+pseudo
+
+				right: 0
+				top: -15px
+				height: 56px
+				width: 55px
+				background-color: darken($color-responsive-menu, 15%)
+				z-index: -1
+				opacity: 0
+
+				+transition
+
+			&-links
+				position: absolute
+				top: 40px
+				right: 0
+				min-width: 180px
+				padding: 15px
+				background-color: $color-responsive-menu
+				transform: translateZ(0) translateX(120%)
+
+				+transition
+
+			&-link
+				color: #fff
+				font-size: 14px
+
+			&.active
+				&:after
+					opacity: 1.00
+
+			&.active
+				+b('nav')
+					+e('addition')
+						+ee('links')
+							transform: none
+
+
+		+min(md)
+			text-align: right
+
+			&-toggle,
+			&-link_hidden
+				display: none

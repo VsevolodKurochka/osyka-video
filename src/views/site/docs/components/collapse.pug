@@ -1,0 +1,24 @@
+extends /site/docs/extends/layout
+block variables
+	- var title = 'Unit Test - Collapse';
+block intro
+	+docs-intro('Collapse', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ipsa repellat quia totam ab doloribus!')
+block content
+	+e.group
+		+docs-group-title('Collapse')
+		+b.js-collapse
+			+e.group.active
+				+e.group-header
+					+e.P.group-title Title
+				+e.group-body
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis assumenda quod numquam rem dolores tenetur veritatis unde ratione. Voluptas modi consequuntur delectus officiis fugit unde, minus dolore ad molestiae nulla, facilis, vero voluptatibus dicta cumque repellat sunt laboriosam ex blanditiis.
+			+e.group
+				+e.group-header
+					+e.P.group-title Title
+				+e.group-body
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit libero ad illo iste ullam, officia unde asperiores quam. Quo, dolore, inventore. Itaque magni aut suscipit quaerat culpa, voluptates atque labore et dignissimos amet velit corrupti consequatur, temporibus voluptatem ratione, ullam.
+			+e.group
+				+e.group-header
+					+e.P.group-title Title
+				+e.group-body
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas repudiandae, facilis a consequuntur aspernatur! At, saepe. Sapiente ad ullam rem pariatur eligendi saepe quo repellendus dolor reprehenderit quaerat nemo doloremque corporis iste deserunt, laborum mollitia, nisi eos fugiat optio debitis.

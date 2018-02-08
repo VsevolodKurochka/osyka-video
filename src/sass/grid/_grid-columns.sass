@@ -1,0 +1,66 @@
+$themeColumn: "col"
+
+=flexColumnWidth($value)
+  flex-basis: $value
+  max-width: $value
+
+=make-column($class: null, $push: "push", $pull: "pull", $offset: "offset")
+  @for $i from 1 through getComp(columns)
+    $defaultValue: getComp(width) / getComp(columns) * $i
+
+    @if getComp(flex) == true
+      @if $class != null
+        +b(unquote($themeColumn) - $class - $i)
+          +flexColumnWidth($defaultValue)
+      @else
+        +b(unquote($themeColumn) - $i)
+          +flexColumnWidth($defaultValue)
+    @else
+      @if $class != null
+        .#{$class}-#{$i}
+          width: $defaultValue
+
+      @if $push == "push"
+        .#{$class}-push-#{$i}
+          left: $defaultValue
+
+      @if $pull == "pull"
+        .#{$class}-pull-#{$i}
+          right: $defaultValue
+
+      @if $offset == "offset"
+        .#{$class}-offset-#{$i}
+          margin-left: $defaultValue
+
++make-column
+
++min(xs)
+  +make-column(xs)
+
+
++min(sm)
+  +make-column(sm)
+
+
++min(md)
+  +make-column(md)
+
+
++min(lg)
+  +make-column(lg)
+
+
+@if getComp(flex) == true
+  [class*=#{$themePrefix}#{$themeColumn}-]
+    flex-grow: 0
+    flex-shrink: 0
+
+    +padding-x(getComp(gutter))
+@else
+  [class*=#{$themePrefix}#{$themeColumn}-]
+    position: relative
+    min-height: 1px
+
+    +padding-x(getComp(gutter))
+
+    float: left

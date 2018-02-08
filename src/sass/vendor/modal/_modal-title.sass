@@ -1,0 +1,27 @@
++b('modal')
+  &__title
+    position: relative
+    margin-bottom: 20px
+    padding-bottom: 7.5px
+    text-align: center
+    font-size: 16px
+    text-transform: uppercase
+    letter-spacing: 1.5px
+    line-height: 1.2
+    color: $color-black
+
+    +weight('bold')
+
+    &:after
+      +pseudo
+
+      top: 100%
+      left: 50%
+      width: 25%
+      height: 2px
+      transform: translateX(-50%)
+      background-color: $color-brand-1
+
+    +min(xs)
+      font-size: 18px
+      letter-spacing: 2.5px

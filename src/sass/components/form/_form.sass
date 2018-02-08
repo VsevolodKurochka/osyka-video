@@ -1,0 +1,74 @@
++b("form")
+	$self: &
+
+	width: 100%
+
+	&__row
+		#{$self}_block &
+			+rowOffset
+
+	+max(sm)
+		&__row
+			#{$self}_line &
+				+rowOffset
+
+
+	+min(sm)
+		#{$self}_line &
+			&__content
+				display: flex
+				justify-content: center
+				+margin-x(-getComp(gutter))
+
+			&__row
+				flex: 1
+				+padding-x(getComp(gutter))
+
+			&__submit
+				+size(100%)
+
+
+	@if $themeFormDesign == "new"
+		&__control
+			+input-default
+
+			border: none
+
+		&__line
+			position: absolute
+			left: 0
+			bottom: 0
+
+			+size(0, 1px)
+
+			background-color: $color-brand-1
+
+			+transition
+
+		input:focus + &__line
+			width: 100%
+
+		&__row_line
+			&:before
+				+pseudo
+
+				left: 0
+				bottom: 0
+				height: 1px
+				width: 100%
+				background-color: $color-brand-1
+
+		+min(xs)
+			&__row
+				margin-top: 30px
+	@else
+		&__control
+			+input-default
+
+			border: 1px solid #ddd
+
+			&:focus
+				border-color: $color-brand-1
+
+				+placeholder
+					color: transparent

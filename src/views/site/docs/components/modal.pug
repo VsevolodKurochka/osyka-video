@@ -1,0 +1,16 @@
+extends /site/docs/extends/layout
+block variables
+	- var title = 'Unit Test - Modal';
+block intro
+	+docs-intro('Modal', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ipsa repellat quia totam ab doloribus!')
+block content
+	+e.group
+		+docs-group-title('Modal example')
+		+b.BUTTON.btn(data-action="modal" data-open="#example-id") Open Modal
+		+b.modal#example-id
+			+e.box._default
+				+e.header
+					+e.P.title Modal title
+					+e.BUTTON.close(data-close="modal") &times;
+				+e.body
+					p Lorem....

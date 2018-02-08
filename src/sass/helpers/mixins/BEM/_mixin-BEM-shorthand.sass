@@ -1,0 +1,28 @@
+////
+/// @group bem-shorthand
+/// @author Vsevolod Kurochka
+////
+
+/// Shorthand for `block`	
+/// @param {String} $name - Block class
+=b($name)
+  +block($name)
+    @content
+
+/// Shorthand for `element`
+/// @param {String} $name - Element class
+=e($name)
+  +element($name)
+    @content
+
+/// Shorthand for `el-of-el`
+/// @param {String} $name - Element of element classname
+=ee($name)
+  +el-of-el($name)
+    @content
+
+/// Shorthand for `el-of-el`
+/// @param {String} $name - Element of element classname
+=m($name)
+  +mod($name)
+    @content

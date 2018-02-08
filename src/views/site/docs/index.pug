@@ -1,0 +1,8 @@
+extends /site/docs/extends/layout
+block variables
+  - var title = 'Unit Test - Documentation';
+block intro
+  +docs-intro('Documentation', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ipsa repellat quia totam ab doloribus!')
+block content
+  +e.group
+    +b.H1.title-lg Documentation!

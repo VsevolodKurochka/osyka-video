@@ -1,0 +1,27 @@
+////
+/// @author Vsevolod Kurochka
+/// @group Offset
+////
+
+/// Padding
+/// @param {Length} $top - Top padding
+/// @param {Length} $right - Right padding
+/// @param {Length} $bottom - Bottom padding
+/// @param {Length} $left - Left padding
+=padding($top, $right, $bottom, $left)
+  padding-top: $top
+  padding-right: $right
+  padding-bottom: $bottom
+  padding-left: $left
+
+/// Padding Horizontal
+/// @param {Length} $right [null] - Right padding
+/// @param {Length} $left [$right] - Left padding
+=padding-x($right, $left: $right)
+  +padding(null, $right, null, $left)
+
+/// Padding Vertical
+/// @param {Length} $top [null] - Top padding
+/// @param {Length} $bottom [$top] - Bottom padding
+=padding-y($top, $bottom: $top)
+  +padding($top, null, $bottom, null)

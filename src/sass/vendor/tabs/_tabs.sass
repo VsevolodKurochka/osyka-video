@@ -1,0 +1,45 @@
+%vtabs-transition
+  +transition
+
+.vtabs
+  &__list
+    $self: &
+
+    font-size: 0
+    text-align: center
+    margin-bottom: 30px
+
+    &-item
+      display: inline-block
+
+      &-link
+        position: relative
+        display: block
+        padding: 10px 15px
+        background-color: transparent
+        text-decoration: none
+        color: inherit
+        font-size: 18px
+        border-bottom: 2px solid #eaeaea
+
+        +transition
+
+        &:hover
+          background-color: #eaeaea
+
+      &.active #{$self}-item-link
+        color: $color-brand-1
+
+    @at-root %effectTab
+      color: $color-brand-1
+
+      &:after
+        background-color: lighten($color-brand-1, 15%)
+        transform: none
+
+  &__content
+    &-inner
+      display: none
+
+      &.active
+        display: block

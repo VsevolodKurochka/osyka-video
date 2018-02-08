@@ -1,0 +1,62 @@
+// Variables
+
+$hamburger-width: 26px
+$hamburger-height: 24px
+$hamburger-transistion-duration: 0.3s
+$hamburger-line-width: 100%
+$hamburger-line-height: 4px
+$hamburger-line-radius: 4px
+
++b('hamburger')
+	@at-root
+		%hamburger-format
+			display: inline-block
+			vertical-align: middle
+
+		%hamburger-transition
+			transition: .25s ease-in-out
+
+	margin-right: 15px
+	padding: 0
+	background-color: transparent
+	border: none
+	outline: none
+	appearance: none
+	-webkit-tap-highlight-color: transparent
+
+	@extend %hamburger-transition
+
+	@extend %hamburger-format
+
+	&__lines
+		+relative
+
+		+size($hamburger-width, $hamburger-height)
+
+		text-indent: -9999px
+
+		@extend %hamburger-format
+
+		@extend %hamburger-transition
+
+		span
+			display: block
+			position: absolute
+			left: 0
+			width: $hamburger-line-width
+			height: $hamburger-line-height
+			background-color: $color-white
+			border-radius: $hamburger-line-radius
+			@extend %hamburger-transition	
+
+	&__text
+		margin-left: 15px
+		color: $color-white
+		text-transform: uppercase
+		font-weight: bold
+		font-size: 18px
+
+		@extend %hamburger-format
+
+	+min(md)
+		display: none

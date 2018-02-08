@@ -1,0 +1,22 @@
+block variables
+
+//- Include helpers mixins
+include /mixins/mixins
+include /bem/index
+include /includes/config
+include /data/data
+//- End
+
+doctype html
+html(lang="ru")
+	head
+		include /includes/head
+		include /includes/styles
+		include /includes/scripts
+	body
+		block nav
+		.site#page
+			block header
+			.site-content#content
+				block content
+			block footer

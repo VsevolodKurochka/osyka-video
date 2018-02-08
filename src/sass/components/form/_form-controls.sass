@@ -1,0 +1,87 @@
+%checkbox-transition
+  transition: all ease 0.3s
+
+.control
+  position: relative
+  user-select: none
+  cursor: pointer
+
+  &-group
+    position: relative
+    padding-top: 15px
+    padding-bottom: 15px
+
+  &__text
+    display: inline-block
+    vertical-align: middle
+    padding-left: 40px
+    font-size: 18px
+
+  &__indicator
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translateY(-50%)
+    width: 25px
+    height: 25px
+
+    @extend %checkbox-transition
+
+    &:before
+      content: ""
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: scale(0)
+
+      @extend %checkbox-transition
+
+  input[type="checkbox"],
+  input[type="radio"]
+    position: absolute
+    visibility: hidden
+
+  input[type="radio"] + &__indicator
+    border-width: 1px
+    border-style: solid
+    border-radius: 100%
+
+    &:before
+      width: 50%
+      height: 50%
+      margin-top: -25%
+      margin-left: -25%
+      border-radius: 100%
+
+  input[type="radio"]:checked + &__indicator
+    &:before
+      transform: scale(1)
+
+  input[type="checkbox"] + &__indicator
+    border-width: 1px
+    border-style: solid
+
+    &:before
+      left: 9px
+      top: 4px
+      width: 6px
+      height: 13px
+      border-style: solid
+      border-width: 0 3px 3px 0
+      transform: rotate(0deg) scale(0)
+
+  input[type="checkbox"]:checked + &__indicator
+    &:before
+      transform: rotate(45deg) scale(1)
+
+  &_default input[type="radio"] + &__indicator
+    border-color: $color-brand-1
+
+    &:before
+      background-color: $color-brand-1
+
+  &_default input[type="checkbox"] + &__indicator
+    border-color: $color-brand-1
+
+    &:before
+      border-color: $color-brand-1

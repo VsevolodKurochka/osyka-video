@@ -1,0 +1,50 @@
+////
+/// @author Vsevolod Kurochka
+/// @param {String} $name - Element's classname
+/// @group BEM
+////
+
+/// Create an `BLOCK` of BEM structure.
+/// @example scss - Create `BLOCK` with className `.foo`
+/// @include block('foo'){
+///		font-size: 12px;
+/// }
+=block($name)
+  .#{$themePrefix}#{$name}
+    @content
+
+/// Create an `ELEMENT` of BEM structure.
+/// @example scss - Create `BLOCK` with className `.foo`
+/// @include block('foo'){
+/// 	@include element('bar'){
+/// 		font-size: 12px;
+/// 	}
+/// }
+=element($name)
+  &__#{$name}
+    @content
+
+/// Create an `Modifier` of BEM structure.
+/// @example scss - Create `Modifier` for `BLOCK` with className `.foo`
+/// @include block('foo'){
+/// 	color: #ddd;
+/// 	@include mod('baz'){
+/// 		color: #f000;
+/// 	}
+/// }
+=mod($name)
+  &_#{$name}
+    @content
+
+/// Create an `Element Of Element` of BEM structure
+/// @example scss - Create `Element Of Element`
+/// @include block('nav'){
+/// 	@include element('menu'){
+/// 		@include el-of-el('item'){
+/// 			font-size: 12px;
+/// 		}
+/// 	}
+/// }
+=el-of-el($name)
+  &-#{$name}
+    @content

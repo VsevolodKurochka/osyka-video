@@ -1,0 +1,22 @@
+extends /site/docs/extends/layout
+block variables
+	- var title = 'Unit Test - Tab';
+block intro
+	+docs-intro('Tab', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ipsa repellat quia totam ab doloribus!')
+block content
+	+e.group
+		+b.tabs
+			+e.UL.list
+				+e.LI.list-item.active
+					+e.A.list-item-link(data-action="tab" data-target="#tab-1") Tab 1
+				+e.LI.list-item
+					+e.A.list-item-link(data-action="tab" data-target="#tab-2") Tab 2
+				+e.LI.list-item
+					+e.A.list-item-link(data-action="tab" data-target="#tab-3") Tab 3
+			+e.content
+				+e.content-inner.active(id="tab-1")
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus velit quae nulla aspernatur nostrum iusto quisquam sunt, nihil laborum earum, eum, ea vel fugiat doloremque. Ipsa deserunt tenetur necessitatibus aliquid, blanditiis ea eligendi consequatur ad nesciunt quo ducimus provident. Alias!
+				+e.content-inner(id="tab-2")
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, corporis.
+				+e.content-inner(id="tab-3")
+					p Lorem ipsum dolor sit amet.

@@ -1,0 +1,18 @@
+/// Container width.
+$themeContainer: "container"
+
+/// Container width.
+$container-width: (sm: 750px, md: 970px, lg: 1170px)
+
++b($themeContainer)
+  +relative
+
+  +margin-x(auto)
+
+  min-height: 1px
+
+  +padding-x(getComp(gutter))
+
+  @each $c-resp, $container_value in $container-width
+    +min($c-resp)
+      width: $container_value

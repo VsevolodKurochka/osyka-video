@@ -1,0 +1,31 @@
+////
+/// @author Vsevolod Kurochka
+/// @group Position
+////
+
+/// Shorthand for positioning.
+/// @param {String} $position - Position type (either `absolute`, `fixed` or `relative`)
+/// @param {Length} $top [null] - Top offset
+/// @param {Length} $right [null] - Right offset
+/// @param {Length} $bottom [null] - Bottom offset
+/// @param {Length} $left [null] - Left offset
+=position($position, $top: null, $right: null, $bottom: null, $left: null)
+  position: $position
+  top: $top
+  right: $right
+  bottom: $bottom
+  left: $left
+
+/// Shorthand for absolute positioning.
+/// @param {Arglist} $args - Offsets
+/// @example scss
+/// @include absolute($top: 0, $right: 0, $bottom: 0, $left: 0)
+=absolute($args...)
+  +position(absolute, $args...)
+
+/// Shorthand for relative positioning.
+/// @param {Arglist} $args - Offsets
+/// @example scss
+/// @include relative($top: 0, $right: 0, $bottom: 0, $left: 0)
+=relative($args...)
+  +position(relative, $args...)

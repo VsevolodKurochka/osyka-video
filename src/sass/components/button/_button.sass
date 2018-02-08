@@ -1,0 +1,72 @@
+%btn-placeholder
+	display: inline-block
+	position: relative
+	max-width: 100%
+	z-index: 1
+	overflow: hidden
+
+	+btn-size($btn-default-padding, $btn-default-size)
+
+	border: none
+	border-radius: 0
+	text-decoration: none
+	font-size: 18px
+	line-height: 1.4
+	-webkit-tap-highlight-color: transparent
+	outline: none
+	transform: translateZ(0)
+
+	+transition
+
+	+weight('bold')
+
+
++b("btn")
+	@extend %btn-placeholder
+
+	&-group
+		font-size: 0
+
+		+b("btn")
+			margin-right: 5px
+			margin-bottom: 5px
+
+	&_size
+		&-lg
+			+btn-size($btn-large-padding, $btn-large-size)
+
+		&-fluid
+			display: block
+			width: 100%
+			text-align: center
+
+	&_shadow
+		&-brand-1
+			box-shadow: 0 3px 8px 1px transparentize($color-brand-1, 0.5)
+
+		&:hover
+			box-shadow: none
+
+	&_navigation
+		background-color: $color-responsive-menu-light
+
+		+max(md)
+			padding: 15px
+			width: 100%
+			font-size: 18px
+			text-align: left
+
+
+		+min(md)
+			background-color: $color-brand-1
+
+	//-
+	//- Iteration button fluid color
+	//-
+
+	+btn-static-iteration
+
+	//-
+	//- Iteration button border-color
+	//-
+	+btn-border-iteration
