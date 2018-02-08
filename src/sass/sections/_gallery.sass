@@ -1,2 +1,94 @@
 +b('gallery')
 	+padding-y(45px)
+
+	+e('row')
+		font-size: 0
+
+	+e('item')
+		+relative
+
+		// video
+		+m('fluid')
+			flex-basis: 100%
+
+		+m('default')
+			height: 250px
+			flex-basis: 100%
+
+			&:before
+				content: ''
+				+absolute(0,null,null,0)
+				+size(100%)
+				background-color: transparentize($color-brand-1, 0.15)
+				z-index: 1
+
+				opacity: 0
+				+transition
+
+			&:hover
+				&:before
+					opacity: 1
+
+			+min(sm)
+				flex-basis: 33.33333%
+
+			+min(md)
+				height: 300px
+
+			+min(lg)
+				height: 500px
+
+		+ee('video')
+			+size(100%, 300px)
+
+			+min(md)
+				height: 400px
+
+			+min(lg)
+				height: 500px
+
+		+ee('background')
+			+absolute(0,null,null,0)
+			+size(100%)
+			object-fit: cover
+
+		+ee('link')
+			+absolute(0,null,null,0)
+			+size(100%)
+			z-index: 2
+
+		+ee('content')
+			width: 100%
+
+			+absolute(50%, null, null, 50%)
+			transform: translate(-50%, -100%)
+
+			opacity: 0
+			visibility: hidden
+			+transition
+
+			z-index: 3
+
+			text-align: center
+			color: $color-white
+
+			+ee('title')
+				+relative
+				padding-bottom: 10px
+				margin-bottom: 10px
+				
+				font-weight: 300
+				line-height: 1.1
+				font-size: 20px
+
+				+min(sm)
+					font-size: 30px
+
+				+min(md)
+					font-size: 36px
+
+		&:hover &
+			+ee('content')
+				opacity: 1
+				visibility: visible
+				transform: translate(-50%, -50%)

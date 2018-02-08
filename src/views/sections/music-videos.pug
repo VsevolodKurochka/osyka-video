@@ -6,3 +6,21 @@
 				br
 				| Videos
 			+e.P.description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+	+e.row.flex
+		+e.item._fluid
+			+e.IFRAME.item-video(src="https://www.youtube.com/embed/6v2L2UGZJAM?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+		+e.item._default
+			+e.A.item-link(data-action="modal" data-open="#modal-music-video-1")
+			+e.item-background(src="img/item-1.jpg")
+			+e.item-content
+				+e.P.item-content-title Jhonson &amp; Jhonson
+				+e.P.item-content-link
+					+e.I.item-content-link-icon
+					+e.SPAN.item-content-link-text Click here for details
+			+b.modal#modal-music-video-1
+				+e.box._default
+					+e.header
+						+e.P.title Modal title
+						+e.BUTTON.close(data-close="modal") &times;
+					+e.body
+						p Lorem....

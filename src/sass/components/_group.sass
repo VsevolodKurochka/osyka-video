@@ -1,7 +1,11 @@
-$group-title: ('default': 30px, 'xs': 35px, 'sm': 40px, 'md': 50px, 'lg': 60px)
+$group-title: ('default': 40px, 'xs': 45px, 'sm': 50px, 'md': 55px, 'lg': 60px)
 
 +b('group')
 	margin-bottom: 30px
+
+	+min(sm)
+		margin-bottom: 45px
+
 	+e('title')
 		+relative
 		text-transform: uppercase
@@ -13,21 +17,23 @@ $group-title: ('default': 30px, 'xs': 35px, 'sm': 40px, 'md': 50px, 'lg': 60px)
 			color: $color-brand-2
 			font-weight: bold
 
+	+e('description')
+
+		+max(sm)
+			margin-top: 30px
+
 	+m('inline')
 		
 		+b('group')
 			+e('title')
-				&:before
-					content: ''
-					+absolute(0, 0, null, null)
-					+size(100%, 2px)
-					background-color: $color-brand-2
-					opacity: 0.2
-
 				+min(sm)
 					padding-right: 45px
 					margin-right: 45px
 					&:before
+						content: ''
+						+absolute(0, 0, null, null)
+						background-color: $color-brand-2
+						opacity: 0.2
 						+size(2px, 100%)
 						transform: rotate(15deg)
 
