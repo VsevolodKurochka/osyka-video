@@ -7,15 +7,19 @@
 		input:not([type="submit"])
 			+input-default
 			border: none
-			border-bottom: 1px solid #ddd
-
-		&__control
-			+input-default
-
-			border: 1px solid #ddd
+			border-bottom: 1px solid #bfbfbf
+			margin-bottom: 15px
+			
+			+min(sm)
+				margin-bottom: 30px
 
 			&:focus
-				border-color: $color-brand-1
+				border-color: $color-brand-2
 
 				+placeholder
 					color: transparent
+		input[type="submit"]
+			cursor: pointer
+			&:hover
+				color: $color-brand-1
+				border-color: $color-brand-1

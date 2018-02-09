@@ -1,7 +1,10 @@
 +b.SECTION.contact
 	+e.container.container
-		.row
-			+e.part._simple.col-12.col-sm-6
+		+e.row.row
+			+e.part._bg.col-12.col-xs-6
+				+e.P.part-title._large._bold._uppercase Tell them what to do next
+				+e.P.part-title._large Your perfect place to buy & sell digital goods
+			+e.part._simple.col-12.col-xs-6
 				+e.part-content
 					+e.P.part-title._bold._uppercase._offset Contact me
 					+b.form
@@ -9,8 +12,4 @@
 							input(name="vname" type="text" placeholder="Name")
 							input(name="vemail" type="email" placeholder="E-mail")
 							input(name="vphone" type="phone" placeholder="Phone")
-							input(type="submit" value="Contact Me")
-						
-			+e.part._bg.col-12.col-sm-6
-				+e.P.part-title._large._bold._uppercase Tell them what to do next
-				+e.P.part-title._large Your perfect place to buy & sell digital goods
+							input(type="submit" class="btn btn_border-brand-2 effect effect_bounce-top" value="Contact Me")

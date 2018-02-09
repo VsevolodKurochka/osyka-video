@@ -4,8 +4,16 @@
 	
 	+padding-y(45px)
 
+	+max(sm)
+		+padding-x(15px)
+
 	+min(sm)
 		+padding-y(90px)
+
+	+e('row')
+
+		+min(xs)
+			flex-direction: row-reverse
 
 	+e('container')
 		border-radius: 4px
@@ -13,6 +21,8 @@
 		box-shadow: 0px 10px 100px 0px rgba(0, 0, 0, 0.3)
 
 	+e('part')
+		+padding-y(45px)
+
 		+m('simple')
 			display: flex
 			flex-flow: row wrap
@@ -36,14 +46,20 @@
 				background-color: transparentize($color-black, 0.5)
 				z-index: -1
 
+		+min(xs)
+			min-height: 300px
+
 		+min(sm)
 			+padding-y(100px)
 			min-height: 450px
 
 		+ee('content')
 
+			width: 100%
+
 			+min(md)
 				width: 75%
+				padding-left: 5%
 
 		+ee('title')
 			line-height: 1.1
