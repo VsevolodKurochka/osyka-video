@@ -1,15 +1,16 @@
 +b.SECTION.contact
 	+e.container.container
 		.row
-			+e.part._white.col-12.col-sm-6
-				+e.P.part-title Contact me
-				+e.FORM(action="#" method="POST")
-					input(name="vname" type="text" placeholder="Name")
-					input(name="vemail" type="email" placeholder="E-mail")
-					input(name="vphone" type="phone" placeholder="Phone")
-					input(type="submit") Contact Me
+			+e.part._simple.col-12.col-sm-6
+				+e.part-content
+					+e.P.part-title._bold._uppercase._offset Contact me
+					+b.form
+						+e.FORM(action="#" method="POST")
+							input(name="vname" type="text" placeholder="Name")
+							input(name="vemail" type="email" placeholder="E-mail")
+							input(name="vphone" type="phone" placeholder="Phone")
+							input(type="submit" value="Contact Me")
 						
 			+e.part._bg.col-12.col-sm-6
-				+e.part-content
-					+e.P.part-title._large Tell them what to do next
-					+e.P.part-title._bold Your perfect place to buy & sell digital goods
+				+e.P.part-title._large._bold._uppercase Tell them what to do next
+				+e.P.part-title._large Your perfect place to buy & sell digital goods

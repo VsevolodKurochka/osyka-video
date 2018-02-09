@@ -10,12 +10,62 @@
 	+e('container')
 		border-radius: 4px
 		background-color: $color-white
-		box-shadow: 0px 10px 100px 0px rgba(0, 0, 0, 0.3);
+		box-shadow: 0px 10px 100px 0px rgba(0, 0, 0, 0.3)
 
 	+e('part')
+		+m('simple')
+			display: flex
+			flex-flow: row wrap
+			align-items: center
 
 		+m('bg')
+			display: flex
+			flex-flow: column wrap
+			justify-content: space-between
+			+relative
 			+bg('../img/contact-part-bg.jpg')
+			z-index: 1
+			text-align: center
+
+			color: $color-white
+
+			&:before
+				content: ''
+				+absolute(0, null, null, 0)
+				+size(100%)
+				background-color: transparentize($color-black, 0.5)
+				z-index: -1
 
 		+min(sm)
 			+padding-y(100px)
+			min-height: 450px
+
+		+ee('content')
+
+			+min(md)
+				width: 75%
+
+		+ee('title')
+			line-height: 1.1
+			font-weight: 300
+			
+			font-size: 20px
+
+			+min(sm)
+				font-size: 25px
+
+			+min(lg)
+				font-size: 30px
+
+			+m('bold')
+				font-weight: bold
+
+			+m('uppercase')
+				text-transform: uppercase
+
+			+m('offset')
+				margin-bottom: 45px
+
+			+m('large')
+				+min(lg)
+					font-size: 35px
