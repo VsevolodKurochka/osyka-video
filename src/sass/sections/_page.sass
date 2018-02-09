@@ -1,0 +1,32 @@
++b('page')
+
+	+e('row')
+		+relative
+		padding-bottom: 45px
+
+		&:before
+			content: ''
+			+absolute(null, null, 0, 50%)
+			+size(80%, 5px)
+			margin-left: -40%
+			background-color: $color-brand-2
+			opacity: 0.05
+
+		&:not(:last-child)
+			margin-bottom: 45px
+
+		+min(sm)
+			padding-bottom: 60px
+			
+			&:not(:last-child)
+				margin-bottom: 60px
+
+		+m('center')
+
+			+min(sm)
+				align-items: center
+
+		+m('reverse')
+
+			+min(sm)
+				flex-direction: row-reverse
