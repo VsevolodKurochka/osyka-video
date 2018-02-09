@@ -19,12 +19,23 @@
 		align-items: center
 		justify-content: center
 
+	+m('small')
+		+padding-y(90px, 60px)
+
+		+min(sm)
+			+padding-y(200px, 100px)
+
+	+e('image')
+		+absolute(0, null, null, 0)
+		+size(100%)
+		object-fit: cover
+
 	+e('title')
 		margin-bottom: 15px
 		line-height: 1
 		text-transform: uppercase
 		font-weight: 300
-		span
+		strong
 			font-weight: bold
 
 		+min(lg)
