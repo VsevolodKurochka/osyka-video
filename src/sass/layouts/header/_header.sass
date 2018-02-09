@@ -1,5 +1,8 @@
 +b("header")
-	position: relative
+	+relative
+	overflow: hidden
+	z-index: 1
+
 	color: $color-white
 
 	+m('background')
@@ -8,6 +11,7 @@
 			+absolute(0, null, null, 0)
 			+size(100%)
 			background-color: transparentize($color-brand-1, 0.2)
+			z-index: 1
 
 	+m('full')
 		display: flex
@@ -43,3 +47,16 @@
 
 		+min(md)
 			font-size: 24px
+
+	+e('video')
+		+absolute(-100%, null, null, 0)
+		+size(100%, 300%)
+		pointer-events: none
+
+		+ee('iframe')
+			+absolute(0, null, null, 0)
+			+size(100%)
+			pointer-events: none
+
+	+e('container')
+		z-index: 2

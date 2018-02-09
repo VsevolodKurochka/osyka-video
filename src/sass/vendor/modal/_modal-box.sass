@@ -4,9 +4,10 @@
 	+e('box')
 		position: relative
 		margin: 30px auto
-		padding: 40px 15px 30px
+		padding: 15px
 		background-color: $color-white
 		box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25)
+		border-radius: 4px
 
 		+transition
 
@@ -26,7 +27,9 @@
 				margin: 30px auto
 
 
-		+min(md)
-			&_medium
-				width: 900px
-				margin: 30px auto
+		&_medium
+			+min(md)
+				padding: 50px 70px
+
+			+min(lg)
+				padding: 70px 100px
