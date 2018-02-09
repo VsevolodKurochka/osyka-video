@@ -1,8 +1,23 @@
 +b('gallery')
+	+relative
 	+padding-y(45px)
+
+	&:before
+		content: ''
+		+absolute(null, null, 0, 50%)
+		+size(80%, 5px)
+		margin-left: -40%
+		background-color: $color-brand-2
+		opacity: 0.05
+
 
 	+e('row')
 		font-size: 0
+
+	+e('footer')
+		text-align: center
+		font-size: 0
+		margin-top: 45px
 
 	+e('item')
 		+relative
