@@ -1,28 +1,29 @@
+$modal-body-title: ('default': 20px, 'xs': 22px, 'md': 24px)
+
 +b('modal')
 	
 	+e('body')
-		font-size: 15px
+		font-size: 18px
 		color: lighten($color-black, 30%)
-	
-	+e('inner')
-		max-height: 60vh
-		overflow-y: auto
-		padding-left: 15px
-		padding-right: 15px
-		-webkit-overflow-scrolling: touch
-		
-		> *
-			&:not(:last-child)
-				margin-bottom: 15px
 
-		+min(sm)
-			max-height: 350px
+		+ee('title')
+			margin-bottom: 15px
+			color: $color-brand-2
+			text-transform: uppercase
+			line-height: 1.1
+			font-weight: bold
+			+fs-simple($modal-body-title)
 
-			&::-webkit-scrollbar
-				width: 7.5px
+		ul
+			list-style: none
 
-				&-track
-					background-color: #ddd
-
-				&-thumb
-					background-color: darkgrey
+			li
+				+relative
+				padding-left: 30px
+				&:not(:last-child)
+					margin-bottom: 7.5px
+				&:before
+					content: ''
+					+absolute(10px, null, null, 0px)
+					+size(20px, 2px)
+					background-color: $color-brand-2
