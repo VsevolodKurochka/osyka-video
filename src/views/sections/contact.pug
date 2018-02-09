@@ -4,14 +4,11 @@
 			+e.part._white.col-12.col-sm-6
 				+e.P.part-title Contact me
 				+e.FORM(action="#" method="POST")
-					+e.row
-						+e.INPUT.control(name="vname" type="text" placeholder="Name")
-					+e.row
-						+e.INPUT.control(name="vemail" type="email" placeholder="E-mail")
-					+e.row
-						+e.INPUT.control(name="vphone" type="phone" placeholder="Phone")
-					+e.row
-						+e.BUTTON.submit.vbtn._color-brand-1(type="submit") Contact Me
+					input(name="vname" type="text" placeholder="Name")
+					input(name="vemail" type="email" placeholder="E-mail")
+					input(name="vphone" type="phone" placeholder="Phone")
+					input(type="submit") Contact Me
+						
 			+e.part._bg.col-12.col-sm-6
 				+e.part-content
 					+e.P.part-title._large Tell them what to do next
