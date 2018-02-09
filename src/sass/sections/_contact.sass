@@ -1,1 +1,21 @@
 +b('contact')
+	margin-top: 45px
+	background-color: darken($color-brand-2, 15%)
+	
+	+padding-y(45px)
+
+	+min(sm)
+		+padding-y(90px)
+
+	+e('container')
+		border-radius: 4px
+		background-color: $color-white
+		box-shadow: 0px 10px 100px 0px rgba(0, 0, 0, 0.3);
+
+	+e('part')
+
+		+m('bg')
+			+bg('../img/contact-part-bg.jpg')
+
+		+min(sm)
+			+padding-y(100px)
