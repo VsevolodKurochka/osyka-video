@@ -83,26 +83,38 @@
 
 				this.modalOpen(modalCurrent);
 
-				// if(modalData.video != undefined){
-				// 	let videoSRC = modalData.video;
-				// 	let videoWrapper = modalCurrent.getElementsByClassName('v-modal__video')[0];
+				if(modalData.video != undefined){
+					let videoSRC = modalData.video;
+					let videoWrapper = modalCurrent.getElementsByClassName('modal__video')[0];
 
-				// 	videoWrapper.innerHTML = '';
+					videoWrapper.innerHTML = '';
 
-				// 	let videoIframe = document.createElement('iframe');
+					let videoIframe = document.createElement('iframe');
 
-				// 	addClass(videoIframe, 'v-modal__iframe');
-				// 	videoIframe.setAttribute('src', videoSRC);
-				// 	videoWrapper.appendChild(videoIframe);
-				// }
+					addClass(videoIframe, 'modal__video-iframe');
+					videoIframe.setAttribute('src', videoSRC);
+					videoIframe.setAttribute('allow', 'autoplay; encrypted-media');
+					videoIframe.setAttribute('allowfullscreen', 'allowfullscreen');
+					videoWrapper.appendChild(videoIframe);
+				}
 
 			}else{
 				console.error('No element with ID: ' + modalID);
 			}
 		}
 
+		_removeIframe(element){
+			let _videoWrapper = element.getElementsByClassName('modal__video')[0];
+
+			_videoWrapper.innerHTML = '';
+		}
+
 		_closeButtonClick(e) {
-			this.modalClose( e.target.closest(`.${this.name}`) );
+
+			let modalCurrent = e.target.closest(`.${this.name}`);
+			this.modalClose( modalCurrent );
+
+			this._removeIframe(modalCurrent);
 		}
 
 		_getEventTarget(e){
@@ -128,6 +140,7 @@
 			this.modals.forEach( (modal) => {
 				if(target == modal){
 					this.modalClose(modal);
+					this._removeIframe(modal);
 				}
 			});
 		}

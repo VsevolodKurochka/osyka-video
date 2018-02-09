@@ -36,10 +36,10 @@
 			+e.P.description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 	+e.row.flex
 		+e.item._fluid
-			+e.IFRAME.item-video(src='https://www.youtube.com/embed/6v2L2UGZJAM?rel=0&amp;controls=0&amp;showinfo=0' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+			+e.IFRAME.item-video(src='https://www.youtube.com/embed/6v2L2UGZJAM?rel=0&ampshowinfo=0' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
 		each song in music
 			+e.item._default
-				+e.A.item-link(data-action="modal" data-open="#modal-music-video-" + song.id)
+				+e.A.item-link(data-action="modal" data-video='https://www.youtube.com/embed/'+song.video+'?rel=0&amp;showinfo=0&amp;autoplay=1' data-open="#modal-music-video-" + song.id)
 				+e.item-background(src=song.image)
 				+e.item-content
 					+e.P.item-content-title=song.title
@@ -52,7 +52,6 @@
 							+e.P.title=song.title
 							+e.BUTTON.close(data-close="modal") &times;
 						+e.video
-							+e.IFRAME.video-iframe(src='https://www.youtube.com/embed/'+song.video+'?rel=0&amp;controls=0&amp;showinfo=0' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
 						+e.body
 							.row
 								+e.body-column.col-12.col-sm-7
