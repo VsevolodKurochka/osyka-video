@@ -27,3 +27,12 @@ $modal-body-title: ('default': 20px, 'xs': 22px, 'md': 24px)
 					+absolute(10px, null, null, 0px)
 					+size(20px, 2px)
 					background-color: $color-brand-2
+		
+		+ee('content')
+			+max(sm)
+				font-size: 15px
+
+		+ee('column')
+			+max(sm)
+				&:not(:last-child)
+					margin-bottom: 15px

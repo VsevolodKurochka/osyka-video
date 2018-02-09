@@ -1,3 +1,31 @@
+-
+	const music = [
+		{
+			id: "1",
+			image: 'img/item-1.jpg',
+			title: "Jhonson & Jhonson",
+			video: "6v2L2UGZJAM",
+			details: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			tools: ["Test","Test","Test"]
+		},
+		{
+			id: "2",
+			image: 'img/item-2.jpg',
+			title: "Jhonson & Jhonson 2",
+			video: "6v2L2UGZJAM",
+			details: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			tools: ["Test","Test","Test"]
+		},
+		{
+			id: "3",
+			image: 'img/item-1.jpg',
+			title: "Jhonson & Jhonson 3",
+			video: "6v2L2UGZJAM",
+			details: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			tools: ["Test","Test","Test"]
+		}
+	];
+
 +b.SECTION.gallery
 	.container
 		+b.group._inline
@@ -8,32 +36,32 @@
 			+e.P.description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 	+e.row.flex
 		+e.item._fluid
-			+e.IFRAME.item-video(src="https://www.youtube.com/embed/6v2L2UGZJAM?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
-		+e.item._default
-			+e.A.item-link(data-action="modal" data-open="#modal-music-video-1")
-			+e.item-background(src="img/item-1.jpg")
-			+e.item-content
-				+e.P.item-content-title Jhonson &amp; Jhonson
-				+e.P.item-content-link
-					+e.I.item-content-link-icon
-					+e.SPAN.item-content-link-text Click here for details
-			+b.modal#modal-music-video-1
-				+e.box._medium.container
-					+e.header
-						+e.P.title Johnson & johnson
-						+e.BUTTON.close(data-close="modal") &times;
-					+e.video
-						+e.IFRAME.video-iframe(src="https://www.youtube.com/embed/6v2L2UGZJAM?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
-					+e.body
-						.row
-							.col-12.col-sm-7
-								+e.P.body-title Project details
-								+e.body-content
-									p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.ave aftre you?
-							.col-12.col-sm-5
-								+e.P.body-title What was used
-								+e.body-content
-									ul
-										li Test
-										li Test
-										li Test
+			+e.IFRAME.item-video(src='https://www.youtube.com/embed/6v2L2UGZJAM?rel=0&amp;controls=0&amp;showinfo=0' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+		each song in music
+			+e.item._default
+				+e.A.item-link(data-action="modal" data-open="#modal-music-video-" + song.id)
+				+e.item-background(src=song.image)
+				+e.item-content
+					+e.P.item-content-title=song.title
+					+e.P.item-content-link
+						+e.I.item-content-link-icon
+						+e.SPAN.item-content-link-text Click here for details
+				+b.modal(id='modal-music-video-'+song.id+'')
+					+e.box._medium.container
+						+e.header
+							+e.P.title=song.title
+							+e.BUTTON.close(data-close="modal") &times;
+						+e.video
+							+e.IFRAME.video-iframe(src='https://www.youtube.com/embed/'+song.video+'?rel=0&amp;controls=0&amp;showinfo=0' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+						+e.body
+							.row
+								+e.body-column.col-12.col-sm-7
+									+e.P.body-title Project details
+									+e.body-content
+										p=song.details
+								+e.body-column.col-12.col-sm-5
+									+e.P.body-title What was used
+									+e.body-content
+										ul
+											each tool in song.tools
+												li=tool
